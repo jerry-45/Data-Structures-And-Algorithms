@@ -1,62 +1,28 @@
-/*Infixtopostfix3C*/
-/*priorities
-1.(),[],{}
-2.^oruparrow
-3.*or/
-4.+,-
-*/
-#include<stdio.h> 
-char stack[20]; 
-int top=-1; 
-void push(char x)
+// Write a program to implement Tower of Hanoi problem.
+
+#include<stdio.h>
+
+void towers(int,char,char,char); 
+
+int main()
 {
-stack[++top]=x;
+    int num;
+    printf("Enter the number of disks:"); 
+    scanf("%d",&num);
+    printf("The sequence of moves involved in the Tower of Hanoi are:\n"); 
+    towers(num,'A','C','B'); 
+    return 0;
 }
-char pop()
+
+void towers(int num,char fromtower,char totower,char auxtower)
 {
-if(top==-1) 
-return-1;
-else
-return stack[top--];
-}
-int priority(char x)
-{
-if(x=='(')
-return 0;
-if(x=='+'||x=='-') 
-return 1;
-if(x=='*'||x=='/')
-return 2;
-}
-main()
-{
-char exp[20]; 
-char *e,x; 
-printf("Enter the expression::"); 
-scanf("%s",exp);
-e=exp;
-while(*e!='\0')
-{
-if(isalnum(*e)) 
-printf("%c",*e);
-else if(*e=='(') 
- push(*e);
-else if(*e==')')
-{
-while((x=pop())!='(')
-printf("%c",x);
-}
-else
-{
-while(priority(stack[top])>=priority(*e))
-printf("%c",pop());
-push(*e);
-}
-e++;
-}
-while(top!=-1)
-{
-printf("%c",pop());
-}
+    if(num==1)  
+    {
+        printf("\nMoved is k1 from tower %c totower %c",fromtower,totower); 
+        return;
+    }
+    towers(num-1,fromtower,auxtower,totower);
+    printf("\nMoved is k %d from tower %c to tower %c",num,fromtower,totower); 
+    towers(num-1,auxtower,totower,fromtower);
 }
 
