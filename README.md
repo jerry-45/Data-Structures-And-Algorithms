@@ -26,7 +26,7 @@ So far we have tried to keep all the code in the repo, big free. If you detected
 | Practical No. | Question No. | Aim | Correct |
 |---------------|--------------|-----|---------|
 | 1             | A            | Write a program to store the elements in 1-D array and perform the operations like searching, sorting and reversing the elements. [Menu Driven]    | ☑ |
-| 1             | B            | Read the two arrays from the user and merge them and display the elements in sorted order.[Menu Driven]    |
+| 1             | B            | Read the two arrays from the user and merge them and display the elements in sorted order.[Menu Driven]    | ☑ |
 | 1             | C            | Write a program to perform the Matrix addition, Multiplication and Transpose Operation. [Menu Driven]    | ☑ |
 | 2             | A            | Write a program to create a single linked list and display the node elements in reverse order.   |
 | 2             | B            | Write a program to search the elements in the linked list and display the same    |
